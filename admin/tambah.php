@@ -156,16 +156,9 @@ if (isset($_POST["submit"])) {
             <!-- /.content-header -->
 
             <div>
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form action="" method="POST" enctype="">
                     <ul>
-                        <select name="nama_kategori" id="nama_kategori">
-                            <?php
-                            $kategori = $conn->kategori("SELECT * FROM tbl_kategori");
-                            while ($row = $kategori->fetch_array()) {
-                                echo "<option value='$row[id_kategori]'>$row[nama_kategori]</option>";
-                            }
-                            ?>
-                        </select>
+                        <select name="nama_kategori" id="nama_kategori"></select>
                         <li style="list-style-type:none ;">
                             <label for="nama_barang">Nama Barang</label>
                             <input type="text" name="nama_barang" id="nama_barang" required autocomplete="off">
@@ -182,6 +175,7 @@ if (isset($_POST["submit"])) {
                             <label for="gambar">Gambar</label>
                             <input type="file" name="gambar" id="gambar" autocomplete="off">
                         </li>
+                        <br>
                         <li style="list-style-type:none ;">
                             <button type="submit" name="submit">Tambah Produk</button>
                         </li>
